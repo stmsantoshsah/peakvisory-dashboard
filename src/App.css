@@ -1,0 +1,53 @@
+body {
+  background-color: var(--color-gray);
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+.animate-pulse {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Orbiting Dots */
+.orbit {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation: float 4s infinite ease-in-out;
+}
+
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.dot:nth-child(1) {
+  top: 0;
+  left: 50%;
+  animation: orbit 3s infinite linear;
+}
+
+.dot:nth-child(2) {
+  top: 50%;
+  right: 0;
+  animation: orbit 3s infinite linear 1s;
+}
+
+.dot:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  animation: orbit 3s infinite linear 2s;
+}
