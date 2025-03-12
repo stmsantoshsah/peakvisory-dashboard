@@ -11,28 +11,33 @@ function QuickbooksSettings() {
         <aside className="bg-white xl:py-[22px] py-[16px] px-6">
             <div className='border-[#ECECF2] border-1 p-4 mb-6'>
                 <div className="flex items-center mb-4 justify-between ">
-                    <div className='flex'>
+                    <div className='flex gap-2'>
                         <div className="w-[40px] h-[40px] bg-green-500 rounded-full flex justify-center items-center">
                             <img src={quickLogo} alt="quickLogo" />
                         </div>
                         <div>
-                            <p className="font-semibold">Quickbook</p>
-                            <p className="text-xs text-gray-500">16 June, 2024, 8:15 PM</p>
+                            <p className="font-[700] text-[16px] text-secondary">Quickbook</p>
+                            <p className="text-[12px] text-lightgray font-[500]">16 June, 2024 <br /> 8:15 PM</p>
                         </div>
                     </div>
                     <div>
-                        <p>Publishing...</p>
-                        <p> Jimmy Jason</p>
+                        <p className='text-lightgray font-[700] text-[12px] mb-2'>Publishing...</p>
+                        <p className='text-lightgray font-[700] text-[12px]'> Jimmy Jason</p>
                     </div>
 
                 </div>
                 <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center space-x-2">
-                        <input type="checkbox" id="auto-sync" className="form-checkbox h-5 w-5 text-green-500" />
+                        <input type="checkbox" id="auto-sync" className="form-checkbox h-4 w-4 text-primary" />
                         <label htmlFor="auto-sync">Auto-sync</label>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <input type="checkbox" id="save-config" className="form-checkbox h-5 w-5 text-green-500" />
+                        <input
+                            type="checkbox"
+                            id="save-config"
+                            className="form-checkbox h-4 w-4 text-white bg-primary border-gray-400 rounded checked:bg-primary checked:border-blue-500"
+                        />
+
                         <label htmlFor="save-config">Save Config</label>
                     </div>
                 </div>
@@ -74,7 +79,7 @@ function QuickbooksSettings() {
                                     className="appearance-none border-b border-[#ECECF2] rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:text-lightgray placeholder:font-[700] placeholder:text-[14px] pb-14 h-[40px]"
                                 />
                             </div>
-                            <button className="bg-[#F6F6F6] text-[#8181A5] py-2 px-4 rounded mt-6 w-full">
+                            <button className="bg-[#F6F6F6] text-[#8181A5] text-[14px] font-[500] py-2 px-4 rounded-[8px] h-[46px] mt-6 w-full cursor-pointer">
                                 Add Comment
                             </button>
                         </div>
@@ -92,7 +97,7 @@ function QuickbooksSettings() {
                                     className="appearance-none border-b border-[#ECECF2] rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:text-lightgray placeholder:font-[700] placeholder:text-[14px] pb-14 h-[40px]"
                                 />
                             </div>
-                            <button className="bg-[#F6F6F6] text-[#8181A5] py-2 px-4 rounded mt-6 w-full">
+                            <button className="bg-[#F6F6F6] text-[#8181A5] text-[14px] font-[500] py-2 px-4 rounded-[8px] h-[46px] mt-6 w-full cursor-pointer">
                                 Add Query
                             </button>
                         </div>
@@ -100,12 +105,12 @@ function QuickbooksSettings() {
                 </div>
             </div>
 
-            <button className="bg-primary text-white py-2 px-4 rounded w-full mb-4">View Line Items</button>
+            <button className="bg-primary text-white py-2 px-4 text-[14px] font-[500] rounded-[8px] h-[46px] w-full mb-4 cursor-pointer">View Line Items</button>
 
             <div className="">
                 <div className="flex items-center justify-between py-2 cursor-pointer" onClick={() => setPaymentDetailsOpen(!paymentDetailsOpen)}>
-                    <h3 className="text-md font-semibold">Payment Details</h3>
-                    {paymentDetailsOpen ? <FaChevronUp /> : <FaChevronDown />}
+                    <h3 className="text-[16px] font-[500] text-secondary">Payment Details</h3>
+                    {paymentDetailsOpen ? <div className='w-6 h-6 bg-[#603AE51A] flex justify-center items-center'><FaChevronUp className='text-primary' /></div> : <div className='w-6 h-6 bg-[#603AE51A] flex justify-center items-center'><FaChevronDown className='text-primary' /></div>}
                 </div>
                 {paymentDetailsOpen && (
                     <div className="py-2">
@@ -173,8 +178,8 @@ function QuickbooksSettings() {
 
             <div className="">
                 <div className="flex items-center justify-between py-2 cursor-pointer" onClick={() => setDescriptionOpen(!descriptionOpen)}>
-                    <h3 className="text-md font-semibold">Description</h3>
-                    {descriptionOpen ? <FaChevronUp /> : <FaChevronDown />}
+                    <h3 className="text-[16px] font-[500] text-secondary">Description</h3>
+                    {descriptionOpen ? <div className='w-6 h-6 bg-[#603AE51A] flex justify-center items-center'><FaChevronUp className='text-primary' /></div> : <div className='w-6 h-6 bg-[#603AE51A] flex justify-center items-center'><FaChevronDown className='text-primary' /></div>}
                 </div>
                 {descriptionOpen && (
                     <div className="py-2">
@@ -192,9 +197,9 @@ function QuickbooksSettings() {
                 )}
             </div>
 
-            <div className="">
-                <button className="bg-[#603AE51A] text-primary py-2 px-4 rounded w-full">Save</button>
-                <button className="bg-primary text-white py-2 px-4 rounded w-full mt-3">Publish</button>
+            <div className="mt-5 border-t pt-6 border-[#ECECF2]">
+                <button className="bg-[#603AE51A] text-primary py-2 px-4 rounded-[8px] h-[46px] w-full cursor-pointer">Save</button>
+                <button className="bg-primary text-white py-2 px-4 rounded-[8px] w-full mt-3 h-[46px] cursor-pointer">Publish</button>
             </div>
         </aside>
     );

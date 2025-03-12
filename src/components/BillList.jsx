@@ -16,9 +16,9 @@ function BillList() {
     activeTab === 'All Document' ? allBills : allBills.filter((bill) => bill.type === activeTab);
 
   return (
-    <aside className="xl:max-w-[350px] max-w-[300px] w-full">
+    <aside className="xl:max-w-[350px] md:max-w-[300px] w-full">
       <nav>
-        <div className="flex space-x-2 mb-4">
+        <div className="flex space-x-2 mb-4 flex-wrap">
           {['All Document', 'Bill', 'Receipt'].map((tab) => (
             <button
               key={tab}
