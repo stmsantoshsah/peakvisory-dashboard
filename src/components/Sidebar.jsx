@@ -160,7 +160,7 @@ const Sidebar = () => {
 
                         {menu.submenus && activeMenu === menu.id && (
                             <div
-                                className={`absolute left-[84px] top-0 ${isMobile ? "bg-[#9C85ED]" : "bg-[#9C85ED]"
+                                className={`absolute left-[84px] z-10 top-0 ${isMobile ? "bg-[#9C85ED]" : "bg-[#9C85ED]"
                                     } h-full w-[200px] shadow-lg px-4 pt-2`}
                             >
                                 <div className="bg-white text-primary text-sm px-2 py-2 rounded-[2px]">

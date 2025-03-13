@@ -114,11 +114,17 @@ function QuickbooksSettings() {
                 </div>
                 {paymentDetailsOpen && (
                     <div className="py-2">
-                        <div className="flex items-center space-x-2 mb-2">
-                            <input type="radio" id="paid" name="payment-status" className="form-radio h-5 w-5 text-blue-500" />
-                            <label htmlFor="paid">Paid</label>
-                            <input type="radio" id="unpaid" name="payment-status" className="form-radio h-5 w-5 text-blue-500" />
-                            <label htmlFor="unpaid">Unpaid</label>
+                        <div className="flex items-center space-x-2 mb-6 gap-4">
+                            <div className='flex items-center min-w-[110px] gap-2'>
+                                <input type="radio" id="paid" name="payment-status" className="form-radio h-5 w-5 text-blue-500" />
+                                <label htmlFor="paid">Paid</label>
+                            </div>
+                            <div className='flex items-center min-w-[110px] gap-2'>
+                                <input type="radio" id="unpaid" name="payment-status" className="form-radio h-5 w-5 text-blue-500" />
+                                <label htmlFor="unpaid">Unpaid</label>
+                            </div>
+
+
                         </div>
                         <div className="mb-2">
                             <label className="block text-lightgray text-[14px] font-[400] mb-1">Bill Number</label>
@@ -183,15 +189,21 @@ function QuickbooksSettings() {
                 </div>
                 {descriptionOpen && (
                     <div className="py-2">
-                        <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex items-center space-x-2 mb-2 gap-4">
+                            <div className='flex items-center gap-2 min-w-[110px]'>
                             <input type="radio" id="single" name="line-item" className="form-radio h-5 w-5 text-blue-500" />
                             <label htmlFor="single">Single</label>
+                            </div>
+                            <div className='flex items-center gap-2 min-w-[110px]'>
                             <input type="radio" id="multiple" name="line-item" className="form-radio h-5 w-5 text-blue-500" />
                             <label htmlFor="multiple">Multiple</label>
+                            </div>
+                            
+                            
                         </div>
-                        <div className="mb-2">
+                        <div className="mb-6 mt-6 pt-6 border-t border-[#ECECF2]">
                             <label className="block text-lightgray text-[14px] font-[400] mb-1">Description</label>
-                            <input type="text" placeholder="Enter Description" className="appearance-none border-b border-[#ECECF2] rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:text-lightgray placeholder:font-[700] placeholder:text-[14px]" />
+                            <input type="text" placeholder="Enter Description" className="appearance-none  rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:text-lightgray placeholder:font-[700] placeholder:text-[14px]" />
                         </div>
                     </div>
                 )}
@@ -199,7 +211,24 @@ function QuickbooksSettings() {
 
             <div className="mt-5 border-t pt-6 border-[#ECECF2]">
                 <button className="bg-[#603AE51A] text-primary py-2 px-4 rounded-[8px] h-[46px] w-full cursor-pointer">Save</button>
-                <button className="bg-primary text-white py-2 px-4 rounded-[8px] w-full mt-3 h-[46px] cursor-pointer">Publish</button>
+                <button className="bg-primary text-white py-2 px-4 rounded-[8px] w-full mt-3 h-[46px] cursor-pointer flex items-center justify-center gap-2">
+                    Publish
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        // style={{ background: 'red' }}
+                    >
+                        <rect width="18" height="18" rx="4" fill="white" fillOpacity="0.2" />
+                        <path
+                            d="M13.418 6.54297L9 10.9609L4.58203 6.54297L4.04297 7.08203L8.73047 11.7695L9 12.0273L9.26953 11.7695L13.957 7.08203L13.418 6.54297Z"
+                            fill="white"
+                        />
+                    </svg>
+                </button>
+
             </div>
         </aside>
     );
